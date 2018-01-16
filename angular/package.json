@@ -1,0 +1,48 @@
+{
+  "name": "cryptorun",
+  "version": "0.0.9",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --delete-output-path=false",
+    "test": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng test",
+    "build.prod.aot": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build --prod",
+    "analyze": "node --max_old_space_size=10000 node_modules/@angular/cli/bin/ng build --prod --aot=false --stats-json --build-optimizer=false && webpack-bundle-analyzer build/stats.json"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "5.2.0",
+    "@angular/cdk": "5.0.4",
+    "@angular/cli": "1.6.4",
+    "@angular/common": "5.2.0",
+    "@angular/compiler": "5.2.0",
+    "@angular/compiler-cli": "5.2.0",
+    "@angular/core": "5.2.0",
+    "@angular/forms": "5.2.0",
+    "@angular/http": "5.2.0",
+    "@angular/material": "5.0.4",
+    "@angular/platform-browser": "5.2.0",
+    "@angular/platform-browser-dynamic": "5.2.0",
+    "@angular/router": "5.2.0",
+    "angulartics2": "4.6.3",
+    "core-js": "2.5.3",
+    "d3": "4.11.0",
+    "hammerjs": "2.0.8",
+    "ngx-toastr": "8.1.0",
+    "rxjs": "5.5.6",
+    "stacktrace-js": "2.0.0",
+    "@swimlane/ngx-charts": "7.0.1",
+    "zone.js": "0.8.20"
+  },
+  "devDependencies": {
+    "@angular/language-service": "5.2.0",
+    "@types/node": "9.3.0",
+    "gulp": "3.9.1",
+    "gulp-clean": "0.4.0",
+    "gulp-replace": "0.6.1",
+    "gulp-run": "1.7.1",
+    "gulp-shell": "0.6.5",
+    "run-sequence": "2.2.1",
+    "typescript": "2.5.3",
+    "webpack-bundle-analyzer": "2.9.2"
+  }
+}

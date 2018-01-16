@@ -1,0 +1,27 @@
+@import '~@angular/material/theming';
+@import url( 'https://fonts.googleapis.com/css?family=Roboto:400|Material+Icons');
+@include mat-core();
+
+// Application Variables
+$app-text-link: #2196F3;
+
+// Material theming         color           ,default,light, dark
+//$app-primary: mat-palette($mat-deep-purple, A700, A700, A900);
+
+$app-primary: mat-palette($mat-blue-grey, 700);
+$app-secondary: mat-palette($mat-light-blue, 500);
+$app-warn: mat-palette($mat-deep-orange);
+
+//$app-theme: mat-light-theme($app-primary, $app-secondary, $app-warn);
+$app-theme: mat-dark-theme($app-primary, $app-secondary, $app-warn);
+@include angular-material-theme($app-theme);
+
+/*
+* Global mixins
+*/
+@mixin mat-icon-size($size: 24px) {
+    font-size: $size;
+    height: $size;
+    width: $size;
+    line-height: $size;
+}

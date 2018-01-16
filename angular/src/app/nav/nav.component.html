@@ -1,0 +1,43 @@
+<mat-toolbar color="primary" class="box-shadow-2">
+  <!-- Nav Button -->
+  <button mat-icon-button [@fadeIn] (click)="mainNav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Page Title -->
+  <div class="page-title" [@fadeIn]>cryptorun</div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- Main Nav (left side) -->
+  <mat-sidenav #mainNav mode="push">
+
+    <div class="section-header" color="primary" (click)="sectionCharts = !sectionCharts">
+      CHARTS
+      <mat-icon class="carrot" [class.collapsed]="sectionCharts">keyboard_arrow_down</mat-icon>
+    </div>
+    <mat-nav-list [style.max-height]="sectionCharts ? '0':'300px'">
+      <mat-list-item [routerLink]="['/prices']">
+        <mat-icon>attach_money</mat-icon>
+        <span>Prices</span>
+      </mat-list-item>
+    </mat-nav-list>
+
+    <div class="section-header" color="primary" (click)="sectionHelp = !sectionHelp">
+      HELP
+      <mat-icon class="carrot" [class.collapsed]="sectionHelp">keyboard_arrow_down</mat-icon>
+    </div>
+    <mat-nav-list [style.max-height]="sectionHelp ? '0':'300px'">
+      <mat-list-item [routerLink]="['/about']">
+        <mat-icon>info_outline</mat-icon>
+        <span> About</span>
+      </mat-list-item>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <div class="router-wrap">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>

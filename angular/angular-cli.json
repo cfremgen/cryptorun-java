@@ -1,0 +1,47 @@
+{
+  "project": {
+    "name": "cryptorun"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "build",
+      "assets": [
+        "apple-touch-icon.png",
+        "favicon.ico",
+        "manifest.json"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "styles": [
+        "../node_modules/ngx-toastr/toastr.css",
+        "styles/icons.scss",
+        "styles/style.scss",
+        "styles/theme.scss"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "defaults": {
+    "styleExt": "scss",
+    "prefixInterfaces": false,
+    "build": {
+      "showCircularDependencies": true
+    },
+    "serve": {
+      "host": "0.0.0.0",
+      "port": 4200,
+      "ssl": true,
+      "sslKey": "ssl/ca.key",
+      "sslCert": "ssl/ca.crt",
+      "proxyConfig": "proxy.config.js"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+
+# Angular
+*.log*
+node_modules
+/angular/build
+
+# Java
+*.prefs
+*.class
+#/java/.settings/com.google.cloud.tools.eclipse.appengine.deploy.prefs
+
+
+# App Engine
+appengine-generated/
+
+# Cordova
+
+#/cordova/platforms/

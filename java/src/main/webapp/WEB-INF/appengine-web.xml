@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+
+	<threadsafe>true</threadsafe>
+	<sessions-enabled>false</sessions-enabled>
+	<runtime>java8</runtime>
+
+	<system-properties>
+		<property name="java.util.logging.config.file" value="WEB-INF/logging.properties" />
+
+		<!-- Binance API -->
+		<property name="binance-token"
+			value="qqIE8waQ6cxExvOhm4kl3KoaYIZqUeEjKtQdSdgsA8XLJqcGlGZcwVYv9VAdZykk" />
+		<property name="binance-secret"
+			value="VClBEROXe2qihCv1Z56umHDVzWKd8NFWWXUizb0DnE8uZ3CM5a05PtYouk34tElt" />
+
+		<!-- Database -->
+		<property name="cloudsql-database-url"
+			value="jdbc:google:mysql://binance-app:dbinstanceName/defaultDatabase?user=root" />
+
+		<property name="local-database-url"
+			value="jdbc:mysql://173.194.110.244:3306/defaultDatabase?user=root&amp;password=password" />
+	</system-properties>
+
+
+	<automatic-scaling>
+		<!-- Limit 15 req/instance since DB can only handle 12 from a single instance -->
+		<max-concurrent-requests>15</max-concurrent-requests>
+		<min-idle-instances>0</min-idle-instances>
+		<max-idle-instances>3</max-idle-instances>
+		<min-pending-latency>400ms</min-pending-latency>
+		<max-pending-latency>4000ms</max-pending-latency>
+	</automatic-scaling>
+
+	<static-files>
+		<include path="/index.html" />
+		<include path="/**.css" expiration="120d" />
+		<include path="/**.js" expiration="120d" />
+		<include path="/**.ico" expiration="120d" />
+		<include path="/**.png" expiration="120d" />
+		<include path="/**service-worker.js" expiration="10m" />
+	</static-files>
+
+</appengine-web-app>
